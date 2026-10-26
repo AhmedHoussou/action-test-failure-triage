@@ -33,6 +33,7 @@ This action removes triage latency by delivering structured, senior-level SDET d
              │
              └─► Formats & posts/updates PR comment (Zero-spam single comment thread)
 ```
+![Playwright Triage Bot PR Comment](assets/pr-triage-preview.png)
 
 ### Supported Classifications
 
