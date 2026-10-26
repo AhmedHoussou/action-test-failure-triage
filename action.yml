@@ -1,5 +1,5 @@
 name: 'Playwright Test Failure Triage Bot'
-description: 'Automatically analyzes failed Playwright test results with Gemini Flash Lite and posts an actionable root-cause analysis directly to the PR.'
+description: 'Analyzes failed Playwright tests with Gemini Flash Lite and posts root-cause triage directly to PRs.'
 author: 'Ahmed Houssou'
 
 inputs:
