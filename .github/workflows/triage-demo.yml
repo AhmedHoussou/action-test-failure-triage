@@ -1,0 +1,24 @@
+name: Triage Demo Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Playwright Failure Triage Bot
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
+          report-path: 'test-results.json'

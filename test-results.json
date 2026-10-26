@@ -1,0 +1,47 @@
+{
+  "config": {
+    "configFile": "playwright.config.ts"
+  },
+  "suites": [
+    {
+      "title": "checkout.spec.ts",
+      "file": "tests/checkout.spec.ts",
+      "specs": [
+        {
+          "title": "should complete checkout with valid card",
+          "ok": false,
+          "tests": [
+            {
+              "status": "unexpected",
+              "results": [
+                {
+                  "status": "timedOut",
+                  "duration": 30005,
+                  "errors": [
+                    {
+                      "message": "Test timeout of 30000ms exceeded.\nError: locator.click: Target closed\n=========================== logs ===========================\nwaiting for locator('#btn-pay')\n============================================================",
+                      "location": {
+                        "file": "tests/checkout.spec.ts",
+                        "line": 42,
+                        "column": 23
+                      },
+                      "snippet": "  40 |   await page.fill('#card-number', '4242424242424242');\n  41 |   // Button never became clickable due to backend payment gateway 504\n> 42 |   await page.click('#btn-pay');\n     |                      ^\n  43 |   await expect(page.locator('.success')).toBeVisible();"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T17:00:00.000Z",
+    "duration": 31200,
+    "expected": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

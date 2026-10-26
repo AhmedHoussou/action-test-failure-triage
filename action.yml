@@ -1,0 +1,23 @@
+name: 'Playwright Test Failure Triage Bot'
+description: 'Automatically analyzes failed Playwright test results with Gemini Flash Lite and posts an actionable root-cause analysis directly to the PR.'
+author: 'Ahmed Houssou'
+
+inputs:
+  github-token:
+    description: 'GitHub token for authenticating and commenting on PRs (secrets.GITHUB_TOKEN)'
+    required: true
+  gemini-api-key:
+    description: 'Google Gemini API key for running log triage'
+    required: true
+  report-path:
+    description: 'Path to the Playwright JSON test report'
+    required: false
+    default: 'test-results.json'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'alert-triangle'
+  color: 'yellow'
